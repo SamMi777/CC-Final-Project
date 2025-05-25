@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <button onclick="window.location.href='./tournament';">Back</button>
+    <button onclick="window.location.href='./finals';">Forward</button>
+    <h1 style="text-align: center;">Tournament overview</h1>
+    
+</head>
+<body>
+    <div>
+        <h2>Teams Overview</h2>
+        <ul>
+            {% for team in teams %}
+                <h2>{{ team }}</h2>
+                <br>
+                <br>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

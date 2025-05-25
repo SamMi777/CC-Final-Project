@@ -1,0 +1,38 @@
+services:
+
+  history:
+    build: ./history
+    expose:
+      - "5005"
+
+  accessories:
+    build: ./accessories
+    expose:
+      - "5005"
+
+  add-team:
+    build: ./add-team
+    expose:
+      - "5005"
+
+  team:
+    build: ./team
+    expose:
+      - "5005"
+
+  tournament:
+    build: ./tournament
+    expose:
+      - "5005"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"  # Bind host port 6379 to container port 6379
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"  # Bind host port 80 to container port 80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf  # Mount Nginx config

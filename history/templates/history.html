@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <button onclick="window.location.href='./';">Back to Home</button>
+    <h1>history</h1>
+</head>
+<body>
+    <div>
+        <form>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: center;">
+                <div><strong>Team Name</strong></div>
+                <div><strong>School Name</strong></div>
+                <div><strong>Date Founded</strong></div>
+                <div><strong>link</strong></div>
+                {% for team in teams %}
+                    <div>{{ team.team_name }}</div>
+                    <div>{{ team.school_name }}</div>
+                    <div>{{ team.year_founded }}</div>
+                    <div>
+                        <button type="button" onclick="window.location.href='/team/{{ team.team_name }}';">View Team</button>
+                    </div>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <button onclick="window.location.href='./';">Back</button>
+    <button onclick="window.location.href='./addTeam';">Add Teams</button>
+    <button onclick="window.location.href='./semifinals';">Forward</button>
+    <h1 style="text-align: center;">Tournament overview</h1>
+    <p>If all teams are entered =><button onclick="window.location.href='./simulate-tournament';">Simulate Tournament</button></p>
+</head>
+<body>
+    <div>
+        <h2>Teams Overview</h2>
+        <ul>
+            {% if teams %}
+	        {% for team in teams %}
+                     <h2>{{ team }}</h2>
+                     <br>
+                {% endfor %}
+	    {% else %}
+		<p>Enter some teams!</p>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>
